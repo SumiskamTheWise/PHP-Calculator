@@ -18,7 +18,7 @@ echo $_REQUEST['username'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable = 0">
 </head>
 <body>
-<form action="foo.php" method="post">
+<form>
     Name:  <input type="text" name="username" /><br />
     Email: <input type="text" name="email" /><br />
     <input type="submit" name="submit" value="Submit me!" />
