@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="af380400-a387-4ff8-bf77-495d313e18da" name="Changes" comment="Just Commit, Small Change">
       <change afterPath="$PROJECT_DIR$/newDebug.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debug.php" beforeDir="false" afterPath="$PROJECT_DIR$/debug.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/distributor.php" beforeDir="false" afterPath="$PROJECT_DIR$/distributor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regexFunctions.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +135,7 @@
       <workItem from="1689231502304" duration="29262000" />
       <workItem from="1689316816907" duration="6650000" />
       <workItem from="1689577643261" duration="20923000" />
-      <workItem from="1689663231657" duration="3206000" />
+      <workItem from="1689663231657" duration="5083000" />
     </task>
     <task id="LOCAL-00001" summary="Just Commit, Small Change">
       <option name="closed" value="true" />
@@ -155,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688975538794</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Working Simple and Multi">
+      <option name="closed" value="true" />
+      <created>1689668571488</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689668571488</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,15 +180,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Just Commit, Small Change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Just Commit, Small Change" />
+    <MESSAGE value="Working Simple and Multi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working Simple and Multi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/distributor.php</url>
-          <line>176</line>
-          <option name="timeStamp" value="97" />
+          <line>139</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/distributor.php</url>
+          <line>157</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/distributor.php</url>
+          <line>161</line>
+          <option name="timeStamp" value="117" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
