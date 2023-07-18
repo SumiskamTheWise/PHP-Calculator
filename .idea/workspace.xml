@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af380400-a387-4ff8-bf77-495d313e18da" name="Changes" comment="Just Commit, Small Change">
-      <change afterPath="$PROJECT_DIR$/regexFunctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PHP.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practise.php" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/newDebug.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.php" beforeDir="false" afterPath="$PROJECT_DIR$/debug.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/distributor.php" beforeDir="false" afterPath="$PROJECT_DIR$/distributor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/regexFunctions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpDebugGeneral" break_at_first_line="true" />
@@ -42,7 +47,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php.debug&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -79,10 +84,7 @@
       </CommandLine>
       <method v="2" />
     </configuration>
-    <configuration name="phpd" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/test.php">
-      <method v="2" />
-    </configuration>
-    <configuration name="regexFunctions.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/regexFunctions.php">
+    <configuration name="newDebug.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/newDebug.php">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="/usr/bin/php8.1" />
@@ -90,19 +92,23 @@
       </CommandLine>
       <method v="2" />
     </configuration>
+    <configuration name="phpd" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/test.php">
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="PHP Script.phpd" />
+      <item itemvalue="PHP Script.newDebug.php" />
       <item itemvalue="PHP Script.debug.php" />
       <item itemvalue="PHP Script.distributor.php" />
-      <item itemvalue="PHP Script.regexFunctions.php" />
       <item itemvalue="PHP Script.functions.php" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHP Script.distributor.php" />
         <item itemvalue="PHP Script.debug.php" />
-        <item itemvalue="PHP Script.regexFunctions.php" />
+        <item itemvalue="PHP Script.newDebug.php" />
+        <item itemvalue="PHP Script.distributor.php" />
         <item itemvalue="PHP Script.functions.php" />
+        <item itemvalue="PHP Script.distributor.php" />
       </list>
     </recent_temporary>
   </component>
@@ -129,6 +135,9 @@
       <workItem from="1689062468092" duration="11414000" />
       <workItem from="1689145324815" duration="16647000" />
       <workItem from="1689231502304" duration="29262000" />
+      <workItem from="1689316816907" duration="6650000" />
+      <workItem from="1689577643261" duration="20923000" />
+      <workItem from="1689663231657" duration="3206000" />
     </task>
     <task id="LOCAL-00001" summary="Just Commit, Small Change">
       <option name="closed" value="true" />
@@ -170,29 +179,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="php-line-method">
-          <url>file://$PROJECT_DIR$/regexFunctions.php</url>
-          <line>71</line>
-          <properties>
-            <option name="className" value="" />
-            <option name="methodName" value="\simpleCalculate" />
-          </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/regexFunctions.php</url>
-          <line>133</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/test.php</url>
-          <line>23</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/test.php</url>
-          <line>28</line>
-          <option name="timeStamp" value="93" />
+          <url>file://$PROJECT_DIR$/distributor.php</url>
+          <line>176</line>
+          <option name="timeStamp" value="97" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
