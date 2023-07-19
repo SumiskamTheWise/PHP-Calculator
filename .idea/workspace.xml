@@ -102,9 +102,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHP Script.debug.php" />
-        <item itemvalue="PHP Script.newDebug.php" />
         <item itemvalue="PHP Script.distributor.php" />
+        <item itemvalue="PHP Script.newDebug.php" />
+        <item itemvalue="PHP Script.debug.php" />
         <item itemvalue="PHP Script.functions.php" />
         <item itemvalue="PHP Script.distributor.php" />
       </list>
@@ -135,7 +135,8 @@
       <workItem from="1689231502304" duration="29262000" />
       <workItem from="1689316816907" duration="6650000" />
       <workItem from="1689577643261" duration="20923000" />
-      <workItem from="1689663231657" duration="5083000" />
+      <workItem from="1689663231657" duration="19400000" />
+      <workItem from="1689750485373" duration="13326000" />
     </task>
     <task id="LOCAL-00001" summary="Just Commit, Small Change">
       <option name="closed" value="true" />
@@ -161,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689668571488</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Another commit&#10;Now SimpleBrackets is working properly">
+      <option name="closed" value="true" />
+      <created>1689670574453</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689670574453</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,25 +190,36 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Just Commit, Small Change" />
     <MESSAGE value="Working Simple and Multi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working Simple and Multi" />
+    <MESSAGE value="Another commit&#10;Now SimpleBrackets is working properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Another commit&#10;Now SimpleBrackets is working properly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/distributor.php</url>
-          <line>139</line>
+          <line>178</line>
           <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/distributor.php</url>
-          <line>157</line>
+          <line>196</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/distributor.php</url>
-          <line>161</line>
+          <line>200</line>
           <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/debug.php</url>
+          <line>33</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/debug.php</url>
+          <line>42</line>
+          <option name="timeStamp" value="121" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
