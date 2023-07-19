@@ -22,20 +22,20 @@ $tests = [
 // yes
     "((10*10)+11)-1*111" => 0,
     "11-(1*111-(10*10))" => 0,
-
+    "11-(1*111-(10*10))+((10*10)+11)-1*111+1*(6-8+4/2)" =>0,
 ];
 foreach ($tests as $input => $expectedResult) {
     validation($input);
 }
 foreach ($tests as $input => $expectedResult) {
-    $operators = splittingTheInput($input);
+    $operators = getAmountOfOperators($input);
     $brackets = "(";
     if (hasNestedBrackets($input) == true) {
-        echo "Nested";
         $result = calcNestedBrackets($input);
+        echo "\n". "Nested";
     }
     elseif (in_array($brackets, str_split($input))){
-        echo $result = simpleBracketsCalculate($input);
+        $result = simpleBracketsCalculate($input);
         echo "\n". "SimpleBrackets";
     } elseif ($operators == 1) {
         $result = simpleCalculate($input);
@@ -44,11 +44,10 @@ foreach ($tests as $input => $expectedResult) {
         $result = multiCalculate($input);
         echo "\n". "Multi";
     }
-
     if ($result == $expectedResult) {
-        echo "Yes" . "\n";
+        echo " Yes" . "\n";
     } else {
-        echo "No" . "\n";
+        echo " No" . "\n";
     }
 }
 

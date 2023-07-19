@@ -7,9 +7,9 @@ function hasNestedBrackets ($input): bool {
     foreach ($checkInput as $individual) {
         if ($individual == "(") {
             $bracketsCounter++;
-        }
-        elseif ($bracketsCounter > 1) {
-            $result = true;
+            if ($bracketsCounter > 1) {
+                $result = true;
+            }
         }
         elseif ($individual == ")") {
             $bracketsCounter = $bracketsCounter - 1;
@@ -67,9 +67,8 @@ function validation(string $input): void
         }
     }
 }
-
 //works
-function splittingTheInput(string $input): int
+function getAmountOfOperators(string $input): int
 {
     $noWhiteSpacesInput = str_replace(' ', '', $input);
     $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -129,7 +128,7 @@ function multiCalculate($input): float|int
     ];
     $inputForMultiCalculate = str_replace($operators, $operatorsSpace, $noWhiteSpacesInput);
     $inputForMultiCalculate = explode($whiteSpace, $inputForMultiCalculate);
-    for ($i = 0; $i < 25; $i++) {
+    for ($i = 0; $i <= count($inputForMultiCalculate); $i++) {
         switch (true) {
             case $position = array_search("/", $inputForMultiCalculate):
                 $result = calc($inputForMultiCalculate, $position, "/");
@@ -147,7 +146,6 @@ function multiCalculate($input): float|int
         array_splice($inputForMultiCalculate, $position - 1, 3, $result);
 
     }
-    echo $result;
     return $result;
 }
 
