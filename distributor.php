@@ -1,4 +1,57 @@
 <?php
+//basic sub-functions
+function hasNestedBrackets ($input): bool {
+    $result = false;
+    $bracketsCounter = 0;
+    $checkInput = str_split($input);
+    foreach ($checkInput as $individual) {
+        if ($individual == "(") {
+            $bracketsCounter++;
+            if ($bracketsCounter > 1) {
+                $result = true;
+            }
+        }
+        elseif ($individual == ")") {
+            $bracketsCounter = $bracketsCounter - 1;
+        }
+
+    }
+    return $result;
+}
+// is used in multiple calculating
+function calc(array $choppedInput, int $position, string $operator): float
+{
+    $firstNumber = $choppedInput[$position - 1];
+    $secondNumber = $choppedInput[$position + 1];
+
+    return match ($operator) {
+        '/' => $firstNumber / $secondNumber,
+        '*' => $firstNumber * $secondNumber,
+        '+' => $firstNumber + $secondNumber,
+        '-' => $firstNumber - $secondNumber,
+    };
+
+}
+// is used in calcNestedBrackets
+function getBracketKeys($input)
+{
+    $stack = [];
+    $keys = [];
+    for ($i = 0; $i < count($input); $i++) {
+        if ($input[$i] === '(') {
+            array_push($stack, $i);
+        } elseif ($input[$i] === ')') {
+            if (!empty($stack)) {
+                $openingKey = array_pop($stack);
+                $keys[$openingKey] = $i;
+            } else {
+                echo "Nuh uh $i";
+                return null;
+            }
+        }
+    }
+    return $keys;
+}
 //works
 function validation(string $input): void
 {
@@ -14,9 +67,8 @@ function validation(string $input): void
         }
     }
 }
-
 //works
-function splittingTheInput(string $input): int
+function getAmountOfOperators(string $input): int
 {
     $noWhiteSpacesInput = str_replace(' ', '', $input);
     $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -64,13 +116,8 @@ function simpleCalculate($input): float
 function multiCalculate($input): float|int
 {
     $noWhiteSpacesInput = str_replace(' ', '', $input);
-//    $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     $operators = ["+", "-", "*", "/", "(", ")"];
     $whiteSpace = " ";
-//    $inputNumbers = str_replace($operators, $whiteSpace, $noWhiteSpacesInput);
-//    $inputOperators = str_replace($numbers, "", $noWhiteSpacesInput);
-//    explode($whiteSpace, $inputNumbers);
-//    str_split($inputOperators);
     $operatorsSpace = [
         " + ",
         " - ",
@@ -81,19 +128,19 @@ function multiCalculate($input): float|int
     ];
     $inputForMultiCalculate = str_replace($operators, $operatorsSpace, $noWhiteSpacesInput);
     $inputForMultiCalculate = explode($whiteSpace, $inputForMultiCalculate);
-    for ($i = 0; $i < 25; $i++) {
+    for ($i = 0; $i <= count($inputForMultiCalculate); $i++) {
         switch (true) {
             case $position = array_search("/", $inputForMultiCalculate):
-                $result = calc($inputForMultiCalculate, $position, '/');
+                $result = calc($inputForMultiCalculate, $position, "/");
                 break;
             case $position = array_search("*", $inputForMultiCalculate):
-                $result = calc($inputForMultiCalculate, $position, '*');
+                $result = calc($inputForMultiCalculate, $position, "*");
                 break;
             case $position = array_search("-", $inputForMultiCalculate):
-                $result = calc($inputForMultiCalculate, $position, '-');
+                $result = calc($inputForMultiCalculate, $position, "-");
                 break;
             case $position = array_search("+", $inputForMultiCalculate):
-                $result = calc($inputForMultiCalculate, $position, '+');
+                $result = calc($inputForMultiCalculate, $position, "+");
                 break;
         }
         array_splice($inputForMultiCalculate, $position - 1, 3, $result);
@@ -102,25 +149,10 @@ function multiCalculate($input): float|int
     return $result;
 }
 
-// is used in multiple
-function calc(array $choppedInput, int $position, string $operator): float
+//works
+function simpleBracketsCalculate($input): float
 {
-    $firstNumber = $choppedInput[$position - 1];
-    $secondNumber = $choppedInput[$position + 1];
-
-    return match ($operator) {
-        '/' => $firstNumber / $secondNumber,
-        '*' => $firstNumber * $secondNumber,
-        '+' => $firstNumber + $secondNumber,
-        '-' => $firstNumber - $secondNumber,
-    };
-
-}
-
-function simpleBracketsCalculate($input): float {
     $noWhiteSpacesInput = str_replace(' ', '', $input);
-    $choppedInput = str_split($noWhiteSpacesInput);
-    $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     $operators = ["+", "-", "*", "/", "(", ")"];
     $whiteSpace = " ";
     $operatorsSpace = [
@@ -133,13 +165,13 @@ function simpleBracketsCalculate($input): float {
     ];
 
 //both are needed. First - setting, Second - correcting
-    $inputForMultiCalculate = str_replace($operators, $operatorsSpace, $noWhiteSpacesInput);
-    $inputForMultiCalculate = explode($whiteSpace, $inputForMultiCalculate);
-
-    $firstBracket = array_search("(", $inputForMultiCalculate);
-    $secondBracket = array_search(")", $inputForMultiCalculate);
-//first to calculate
-    $expressionInBrackets = array_slice($inputForMultiCalculate, $firstBracket+1, 3);
+    $inputForSimpleBrackets = str_replace($operators, $operatorsSpace, $noWhiteSpacesInput);
+    $inputForSimpleBrackets = explode($whiteSpace, $inputForSimpleBrackets);
+while (in_array("(", $inputForSimpleBrackets)){
+    $firstBracket = array_search("(", $inputForSimpleBrackets);
+    $secondBracket = array_search(")", $inputForSimpleBrackets);
+//brackets are first to calculate
+    $expressionInBrackets = array_slice($inputForSimpleBrackets, $firstBracket + 1, $secondBracket-$firstBracket-1);
 
 //counting part for brackets
     for ($i = 0; $i <= count($expressionInBrackets); $i++) {
@@ -158,16 +190,17 @@ function simpleBracketsCalculate($input): float {
                 $result = calc($e, $position, '+');
                 break;
         }
+        $e = array_splice($expressionInBrackets, $position - 1, 3, $result);
     }
-    $result;
     $bracketsResult = [$result];
 
-    $noBracketsPart = array_slice($inputForMultiCalculate, 0, $firstBracket - 1);
-    $afterBracketsPart = array_slice($inputForMultiCalculate, $secondBracket+2);
-    $finalExpression = array_merge($noBracketsPart, $bracketsResult, $afterBracketsPart);
-
+    $noBracketsPart = array_slice($inputForSimpleBrackets, 0, $firstBracket - 1);
+    $afterBracketsPart = array_slice($inputForSimpleBrackets, $secondBracket + 2);
+    $inputForSimpleBrackets = array_merge($noBracketsPart, $bracketsResult, $afterBracketsPart);
+    $finalExpression = $inputForSimpleBrackets;
+}
 // counting everything together
-    for ($i = 0; $i < 100; $i++) {
+    for ($i = 0; $i < count($finalExpression); $i++) {
         switch (true) {
             case $position = array_search("*", $finalExpression):
                 $result = calc($finalExpression, $position, '*');
@@ -184,6 +217,81 @@ function simpleBracketsCalculate($input): float {
         }
         array_splice($finalExpression, $position - 1, 3, $result);
     }
-    echo $result;
     return $result;
 }
+
+function calcNestedBrackets($input): float {
+
+    $noWhiteSpacesInput = str_replace(' ', '', $input);
+    $operators = ["+", "-", "*", "/", "(", ")"];
+    $whiteSpace = " ";
+    $operatorsSpace = [
+        " + ",
+        " - ",
+        " * ",
+        " / ",
+        "( ",
+        " )",
+    ];
+    $inputForSimpleCalculate = str_replace($operators, $operatorsSpace, $noWhiteSpacesInput);
+    $inputForSimpleCalculate = explode($whiteSpace, $inputForSimpleCalculate);
+    again:$bracketKeys = getBracketKeys($inputForSimpleCalculate);
+
+    if ($bracketKeys !== null) {
+        foreach ($bracketKeys as $openingKeys => $closingKeys) {
+            $firstBracket = $openingKeys;
+            $secondBracket = $closingKeys;
+
+//brackets are first to calculate
+            $expressionInBrackets = array_slice($inputForSimpleCalculate, $firstBracket + 1, $secondBracket - $firstBracket - 1);
+//counting part for brackets
+            for ($i = 0; $i <= count($expressionInBrackets); $i++) {
+                switch (true) {
+                    case $position = array_search("*", $expressionInBrackets):
+                        $result = calc($expressionInBrackets, $position, "*");
+                        break;
+                    case $position = array_search("/", $expressionInBrackets):
+                        $result = calc($expressionInBrackets, $position, "/");
+                        break;
+                    case $position = array_search("-", $expressionInBrackets):
+                        $result = calc($expressionInBrackets, $position, "-");
+                        break;
+                    case $position = array_search("+", $expressionInBrackets):
+                        $result = calc($expressionInBrackets, $position, "+");
+                        break;
+                }
+                $replacement = array($result);
+                $expression = array_splice($expressionInBrackets, $position - 1, 3, $replacement);
+            }
+            $bracketsResult = array($result);
+
+            //slice 'n dice in order to create a new array(new-corrected)
+            $beforeBrackets = array_slice($inputForSimpleCalculate, 0, $firstBracket);
+            $afterBrackets = array_slice($inputForSimpleCalculate, $secondBracket + 1);
+            $inputForSimpleCalculate = array_merge($beforeBrackets, $bracketsResult, $afterBrackets);
+            $inputForMultiCalculate = $inputForSimpleCalculate;
+            goto again;
+        }
+        for ($i = 0; $i < 25; $i++) {
+            switch (true) {
+                case $position = array_search("/", $inputForMultiCalculate):
+                    $result = calc($inputForMultiCalculate, $position, "/");
+                    break;
+                case $position = array_search("*", $inputForMultiCalculate):
+                    $result = calc($inputForMultiCalculate, $position, "*");
+                    break;
+                case $position = array_search("-", $inputForMultiCalculate):
+                    $result = calc($inputForMultiCalculate, $position, "-");
+                    break;
+                case $position = array_search("+", $inputForMultiCalculate):
+                    $result = calc($inputForMultiCalculate, $position, "+");
+                    break;
+            }
+            array_splice($inputForMultiCalculate, $position - 1, 3, $result);
+
+        }
+    }
+return $result;
+
+}
+

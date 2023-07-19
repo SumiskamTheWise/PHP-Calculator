@@ -8,35 +8,46 @@ $tests = [
     "901-1" => 900,
     "123*3" => 369,
     "696/6" => 116,
+// yes
     "1+3-4/4+6*3+111-121/11+3*777" => 2452,
     "1*1-1/1+1*1+11-11/11+1*12" => 23,
     "5/5/5*125"=> 25,
     "5*5*5/125" => 1,
+// yes
+    "11-(1*111)+(10*10)" => 0,
     "11-1*111+(10*10)" => 0,
-    "11+(10*10)-1*111" => 0,
     "(10*10)+11-1*111" => 0,
-
+    "(11+111)-(1*111)+(10-10)" => 11,
+    "(11+111)-(1*111)+(10*10-111)" => 0,
+// yes
+    "((10*10)+11)-1*111" => 0,
+    "11-(1*111-(10*10))" => 0,
+    "11-(1*111-(10*10))+((10*10)+11)-1*111+1*(6-8+4/2)" =>0,
 ];
 foreach ($tests as $input => $expectedResult) {
     validation($input);
 }
 foreach ($tests as $input => $expectedResult) {
-    $operators = splittingTheInput($input);
+    $operators = getAmountOfOperators($input);
     $brackets = "(";
-    if (in_array($brackets, str_split($input))){
+    if (hasNestedBrackets($input) == true) {
+        $result = calcNestedBrackets($input);
+        echo "\n". "Nested";
+    }
+    elseif (in_array($brackets, str_split($input))){
         $result = simpleBracketsCalculate($input);
-        echo "\n". "Icy";
+        echo "\n". "SimpleBrackets";
     } elseif ($operators == 1) {
         $result = simpleCalculate($input);
-        echo "\n". "Sunny";
-    }    else {
+        echo "\n". "Simple";
+    } elseif ($operators > 1) {
         $result = multiCalculate($input);
-        echo "\n". "Foggy";
+        echo "\n". "Multi";
     }
     if ($result == $expectedResult) {
-        echo "Yes" . "\n";
+        echo " Yes" . "\n";
     } else {
-        echo "No" . "\n";
+        echo " No" . "\n";
     }
 }
 
