@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af380400-a387-4ff8-bf77-495d313e18da" name="Changes" comment="Just Commit, Small Change">
-      <change afterPath="$PROJECT_DIR$/newDebug.php" afterDir="false" />
+    <list default="true" id="af380400-a387-4ff8-bf77-495d313e18da" name="Changes" comment="Commit:&#10;Nested Brackets">
+      <change afterPath="$PROJECT_DIR$/classes/AbstractCalculator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/MultiCalculator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/NestedBracketsCalculator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/SimpleBracketsCalculator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/SimpleCalculator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debug.php" beforeDir="false" afterPath="$PROJECT_DIR$/debug.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/distributor.php" beforeDir="false" afterPath="$PROJECT_DIR$/distributor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newDebug.php" beforeDir="false" afterPath="$PROJECT_DIR$/newDebug.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,40 +25,63 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="ComposerSettings">
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Helper" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpDebugGeneral" break_at_first_line="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2SEopdrhCMoheO5IunoLPhOcOw3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/dmytro/projects/PHP-Calculator/Practise2.php&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/dmytro/projects/PHP-Calculator/Practise2.php",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/classes" />
+    </key>
+  </component>
   <component name="RunManager" selected="PHP Script.phpd">
+    <configuration name="SubFunctions.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/SubFunctions.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="/usr/bin/php8.1" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/Practise2.php">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -95,6 +127,7 @@
     </configuration>
     <list>
       <item itemvalue="PHP Script.phpd" />
+      <item itemvalue="PHP Script.SubFunctions.php" />
       <item itemvalue="PHP Script.newDebug.php" />
       <item itemvalue="PHP Script.debug.php" />
       <item itemvalue="PHP Script.distributor.php" />
@@ -102,11 +135,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHP Script.distributor.php" />
-        <item itemvalue="PHP Script.newDebug.php" />
-        <item itemvalue="PHP Script.debug.php" />
         <item itemvalue="PHP Script.functions.php" />
         <item itemvalue="PHP Script.distributor.php" />
+        <item itemvalue="PHP Script.debug.php" />
+        <item itemvalue="PHP Script.newDebug.php" />
+        <item itemvalue="PHP Script.SubFunctions.php" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +169,12 @@
       <workItem from="1689316816907" duration="6650000" />
       <workItem from="1689577643261" duration="20923000" />
       <workItem from="1689663231657" duration="19400000" />
-      <workItem from="1689750485373" duration="13326000" />
+      <workItem from="1689750485373" duration="17497000" />
+      <workItem from="1689775454512" duration="729000" />
+      <workItem from="1689836367229" duration="12522000" />
+      <workItem from="1689850123662" duration="408000" />
+      <workItem from="1689851004769" duration="10189000" />
+      <workItem from="1689923880083" duration="22699000" />
     </task>
     <task id="LOCAL-00001" summary="Just Commit, Small Change">
       <option name="closed" value="true" />
@@ -170,7 +208,23 @@
       <option name="project" value="LOCAL" />
       <updated>1689670574453</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Commit:&#10;Nested Brackets">
+      <option name="closed" value="true" />
+      <created>1689767813498</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689767813498</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Commit:&#10;Nested Brackets">
+      <option name="closed" value="true" />
+      <created>1689775419114</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689775419114</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,38 +245,8 @@
     <MESSAGE value="Just Commit, Small Change" />
     <MESSAGE value="Working Simple and Multi" />
     <MESSAGE value="Another commit&#10;Now SimpleBrackets is working properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Another commit&#10;Now SimpleBrackets is working properly" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/distributor.php</url>
-          <line>178</line>
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/distributor.php</url>
-          <line>196</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/distributor.php</url>
-          <line>200</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/debug.php</url>
-          <line>33</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/debug.php</url>
-          <line>42</line>
-          <option name="timeStamp" value="121" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Commit:&#10;Nested Brackets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit:&#10;Nested Brackets" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
