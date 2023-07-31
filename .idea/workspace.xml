@@ -7,18 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af380400-a387-4ff8-bf77-495d313e18da" name="Changes" comment="Commit:&#10;Nested Brackets">
-      <change afterPath="$PROJECT_DIR$/classes/AbstractCalculator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/MultiCalculator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/NestedBracketsCalculator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/SimpleBracketsCalculator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/SimpleCalculator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.php" beforeDir="false" afterPath="$PROJECT_DIR$/debug.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/distributor.php" beforeDir="false" afterPath="$PROJECT_DIR$/distributor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newDebug.php" beforeDir="false" afterPath="$PROJECT_DIR$/newDebug.php" afterDir="false" />
+    <list default="true" id="af380400-a387-4ff8-bf77-495d313e18da" name="Changes" comment="Commit:&#10;Trying OOP">
+      <change beforePath="$PROJECT_DIR$/classes/AbstractCalculator.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AbstractCalculator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MultiCalculator.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/MultiCalculator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/NestedBracketsCalculator.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/NestedBracketsCalculator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/SimpleBracketsCalculator.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/SimpleBracketsCalculator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/SimpleCalculator.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/SimpleCalculator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+    </list>
+    <list id="88e65f87-1bf6-4563-ad3e-70c269721262" name="ignored" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +145,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="af380400-a387-4ff8-bf77-495d313e18da" name="Changes" comment="" />
+      <changelist id="88e65f87-1bf6-4563-ad3e-70c269721262" name="ignored" comment="" />
       <created>1688721284974</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -174,7 +173,8 @@
       <workItem from="1689836367229" duration="12522000" />
       <workItem from="1689850123662" duration="408000" />
       <workItem from="1689851004769" duration="10189000" />
-      <workItem from="1689923880083" duration="22699000" />
+      <workItem from="1689923880083" duration="22844000" />
+      <workItem from="1690789896062" duration="9202000" />
     </task>
     <task id="LOCAL-00001" summary="Just Commit, Small Change">
       <option name="closed" value="true" />
@@ -224,7 +224,23 @@
       <option name="project" value="LOCAL" />
       <updated>1689775419114</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Commit:&#10;Trying OOP">
+      <option name="closed" value="true" />
+      <created>1689948641178</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1689948641178</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Refactored OOP">
+      <option name="closed" value="true" />
+      <created>1690799016803</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1690799016803</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +262,9 @@
     <MESSAGE value="Working Simple and Multi" />
     <MESSAGE value="Another commit&#10;Now SimpleBrackets is working properly" />
     <MESSAGE value="Commit:&#10;Nested Brackets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit:&#10;Nested Brackets" />
+    <MESSAGE value="Commit:&#10;Trying OOP" />
+    <MESSAGE value="Refactored OOP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored OOP" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
