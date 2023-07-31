@@ -24,6 +24,7 @@ class MultiCalculator extends AbstractCalculator
             }
             array_splice($inputForMultiCalculate, $position - 1, 3, array($result));
         }
+        echo "Tuti-Multi";
         return $result;
     }
 }

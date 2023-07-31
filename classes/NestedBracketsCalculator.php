@@ -38,7 +38,7 @@ class NestedBracketsCalculator extends AbstractCalculator
                 goto again;
             }
         }
-
+        echo "Nested";
         return multiCalculate($inputForNestedBracketsCalculate);
     }
 

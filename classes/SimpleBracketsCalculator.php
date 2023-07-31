@@ -15,6 +15,7 @@ class SimpleBracketsCalculator extends AbstractCalculator
             $result = multiCalculate($expressionInBrackets);
             $inputForSimpleBrackets = creatingArrayForBracketsCalculators($inputForSimpleBrackets, $result, $firstBracket, $secondBracket);
         }
+        echo "Brackets";
         return multiCalculate($inputForSimpleBrackets);
     }
 

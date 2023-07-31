@@ -31,6 +31,7 @@ class SimpleCalculator extends AbstractCalculator
         } elseif (in_array("/", $expression)) {
             $result = $number1 / $number2;
         }
+        echo "Simplus";
         return ($result);
     }
 }
