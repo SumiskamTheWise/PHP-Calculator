@@ -9,81 +9,21 @@ abstract class AbstractCalculator
 {
     abstract public function calculate (string $input): float;
 
-    public function calc(array $choppedInput, int $position, string $operator): float
-    {
-        $firstNumber = $choppedInput[$position - 1];
-        $secondNumber = $choppedInput[$position + 1];
-
-        return match ($operator) {
-            "/" => $firstNumber / $secondNumber,
-            "*" => $firstNumber * $secondNumber,
-            "+" => $firstNumber + $secondNumber,
-            "-" => $firstNumber - $secondNumber,
-        };
-
-    }
-
-    public function creatingInputForCalculating($input): array
-    {
-        $whiteSpace = " ";
-        $operatorsSpace = [
-            " + ",
-            " - ",
-            " * ",
-            " / ",
-            "( ",
-            " )",
-        ];
-        $noWhiteSpacesInput = str_replace(' ', '', $input);
-        $operators = ["+", "-", "*", "/", "(", ")"];
-        $input = str_replace($operators, $operatorsSpace, $noWhiteSpacesInput);
-        return explode($whiteSpace, $input);
-    }
-
-    public function multiCalculate($input): float|int
-    {
-        $inputForMultiCalculate = !is_array($input) ? creatingInputForCalculating($input) : $input;
-        while (count($inputForMultiCalculate) > 1) {
-            switch (true) {
-                case $position = array_search("/", $inputForMultiCalculate):
-                    $result = calc($inputForMultiCalculate, $position, "/");
-                    break;
-                case $position = array_search("*", $inputForMultiCalculate):
-                    $result = calc($inputForMultiCalculate, $position, "*");
-                    break;
-                case $position = array_search("-", $inputForMultiCalculate):
-                    $result = calc($inputForMultiCalculate, $position, "-");
-                    break;
-                case $position = array_search("+", $inputForMultiCalculate):
-                    $result = calc($inputForMultiCalculate, $position, "+");
-                    break;
-            }
-            array_splice($inputForMultiCalculate, $position - 1, 3, array($result));
-        }
-        return $result;
-    }
-
-    public function creatingArrayForBracketsCalculators($input, $result, $firstBracket, $secondBracket): array
-    {
-        $bracketsResult = array($result);
-        $beforeBrackets = array_slice($input, 0, $firstBracket);
-        $afterBrackets = array_slice($input, $secondBracket + 1);
-        return array_merge($beforeBrackets, $bracketsResult, $afterBrackets);
-    }
 
     public static function getCalculator($input): AbstractCalculator
     {
-        global $tests;
-        validation($input);
-            return match (true) {
-            hasNestedBrackets($input) => new NestedBracketsCalculator(),
+        self::validation($input);
+
+        return match (true) {
+            self::hasNestedBrackets($input) => new NestedBracketsCalculator(),
             in_array("(", str_split($input)) => new SimpleBracketsCalculator(),
-            getAmountOfOperators($input) == 1 => new SimpleCalculator(),
-            getAmountOfOperators($input) > 1 => new MultiCalculator(),
+            self::getAmountOfOperators($input) == 1 => new SimpleCalculator(),
+            self::getAmountOfOperators($input) > 1 => new MultiCalculator(),
         };
     }
 
-    function validation(string $input): void
+
+    static function validation(string $input): void
     {
         $validNumbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 0, ".", " ");
         $validOperators = array("+", "-", "*", "/", "(", ")");
@@ -97,7 +37,8 @@ abstract class AbstractCalculator
             }
         }
     }
-    function hasNestedBrackets($input): bool
+
+    static function hasNestedBrackets($input): bool
     {
         $result = false;
         $bracketsCounter = 0;
@@ -114,7 +55,8 @@ abstract class AbstractCalculator
         }
         return $result;
     }
-    function getAmountOfOperators(string $input): int
+
+    static function getAmountOfOperators(string $input): int
     {
         $noWhiteSpacesInput = str_replace(' ', '', $input);
         $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -123,6 +65,69 @@ abstract class AbstractCalculator
         $amountOfOperators = count($arrayOfOperators);
         return ($amountOfOperators);
     }
+
+    static public function calc(array $choppedInput, int $position, string $operator): float
+    {
+        $firstNumber = $choppedInput[$position - 1];
+        $secondNumber = $choppedInput[$position + 1];
+
+        return match ($operator) {
+            "/" => $firstNumber / $secondNumber,
+            "*" => $firstNumber * $secondNumber,
+            "+" => $firstNumber + $secondNumber,
+            "-" => $firstNumber - $secondNumber,
+        };
+
+    }
+
+    static public function creatingInputForCalculating($input): array
+    {
+        $whiteSpace = " ";
+        $operatorsSpace = [
+            " + ",
+            " - ",
+            " * ",
+            " / ",
+            "( ",
+            " )",
+        ];
+        $noWhiteSpacesInput = str_replace(' ', '', $input);
+        $operators = ["+", "-", "*", "/", "(", ")"];
+        $input = str_replace($operators, $operatorsSpace, $noWhiteSpacesInput);
+        return explode($whiteSpace, $input);
+    }
+
+    static public function multiCalculate($input): float|int
+    {
+        $inputForMultiCalculate = !is_array($input) ? creatingInputForCalculating($input) : $input;
+        while (count($inputForMultiCalculate) > 1) {
+            switch (true) {
+                case $position = array_search("/", $inputForMultiCalculate):
+                    $result = static::calc($inputForMultiCalculate, $position, "/");
+                    break;
+                case $position = array_search("*", $inputForMultiCalculate):
+                    $result = static::calc($inputForMultiCalculate, $position, "*");
+                    break;
+                case $position = array_search("-", $inputForMultiCalculate):
+                    $result = static::calc($inputForMultiCalculate, $position, "-");
+                    break;
+                case $position = array_search("+", $inputForMultiCalculate):
+                    $result = static::calc($inputForMultiCalculate, $position, "+");
+                    break;
+            }
+            array_splice($inputForMultiCalculate, $position - 1, 3, array($result));
+        }
+        return $result;
+    }
+
+    static public function creatingArrayForBracketsCalculators($input, $result, $firstBracket, $secondBracket): array
+    {
+        $bracketsResult = array($result);
+        $beforeBrackets = array_slice($input, 0, $firstBracket);
+        $afterBrackets = array_slice($input, $secondBracket + 1);
+        return array_merge($beforeBrackets, $bracketsResult, $afterBrackets);
+    }
+
 
 
 }

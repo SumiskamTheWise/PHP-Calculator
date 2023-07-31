@@ -5,7 +5,6 @@ use classes\AbstractCalculator;
 
 require_once 'classes/AbstractCalculator.php';
 
-require 'newDebug.php';
 $tests = [
     "7+5"=> 12,
     "((10*10)+11)-1*111" => 0,
@@ -36,9 +35,6 @@ $tests = [
     "(1*111)+(10*10)" => 0.5,
     "11-(1*111/(10*10))+((10*10)+11)" => 3,
 ];
-foreach ($tests as $input => $expectedResult) {
-    validation($input);
-}
 
 foreach ($tests as $input => $expectedResult) {
     $calculator = AbstractCalculator::getCalculator($input);
