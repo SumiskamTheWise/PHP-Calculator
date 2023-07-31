@@ -25,21 +25,21 @@ class NestedBracketsCalculator extends AbstractCalculator
     }
     public function calculate(string $input): float
     {
-        $inputForNestedBracketsCalculate = creatingInputForCalculating($input);
+        $inputForNestedBracketsCalculate = static::creatingInputForCalculating($input);
         again:
-        $bracketKeys = getBracketKeys($inputForNestedBracketsCalculate);
+        $bracketKeys = static::getBracketKeys($inputForNestedBracketsCalculate);
         if ($bracketKeys !== null) {
             foreach ($bracketKeys as $openingKeys => $closingKeys) {
                 $firstBracket = $openingKeys;
                 $secondBracket = $closingKeys;
                 $expressionInBrackets = array_slice($inputForNestedBracketsCalculate, $firstBracket + 1, $secondBracket - $firstBracket - 1);
-                $result = multiCalculate($expressionInBrackets);
-                $inputForNestedBracketsCalculate = creatingArrayForBracketsCalculators($inputForNestedBracketsCalculate, $result, $firstBracket, $secondBracket);
+                $result = static::multiCalculate($expressionInBrackets);
+                $inputForNestedBracketsCalculate = static::creatingArrayForBracketsCalculators($inputForNestedBracketsCalculate, $result, $firstBracket, $secondBracket);
                 goto again;
             }
         }
-
-        return multiCalculate($inputForNestedBracketsCalculate);
+        echo "Nested";
+        return static::multiCalculate($inputForNestedBracketsCalculate);
     }
 
 }
