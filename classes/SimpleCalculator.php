@@ -7,31 +7,27 @@ class SimpleCalculator extends AbstractCalculator
     public function calculate(string $input):  float
     {
         $result = 0;
-        $numbers = array();
         $expression = str_split($input);
-        if (in_array("+", $expression)) {
-            $numbers = explode("+", $input);
-        } elseif (in_array("-", $expression)) {
-            $numbers = explode("-", $input);
-        } elseif (in_array("*", $expression)) {
-            $numbers = explode("*", $input);
-        } elseif (in_array("/", $expression)) {
-            $numbers = explode("/", $input);
-        }
+        $numbers = match (true) {
+            in_array("+", $expression) => explode("+", $input),
+            in_array("-", $expression) => explode("-", $input),
+            in_array("*", $expression) => explode("*", $input),
+            in_array("/", $expression) => explode("/", $input),
+            default => 0,
+        };
 
         $number1 = floatval($numbers[0]);
         $number2 = floatval($numbers[1]);
 
-        if (in_array("+", $expression)) {
-            $result = $number1 + $number2;
-        } elseif (in_array("-", $expression)) {
-            $result = $number1 - $number2;
-        } elseif (in_array("*", $expression)) {
-            $result = $number1 * $number2;
-        } elseif (in_array("/", $expression)) {
-            $result = $number1 / $number2;
-        }
+        $result = match (true) {
+            in_array("+", $expression) => $number1 + $number2,
+            in_array("-", $expression) => $number1 - $number2,
+            in_array("*", $expression) => $number1 * $number2,
+            in_array("/", $expression) => $number1 / $number2,
+            default => 0,
+        };
         echo "Simples";
-        return ($result);
+
+        return $result;
     }
 }

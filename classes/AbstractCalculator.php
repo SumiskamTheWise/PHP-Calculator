@@ -5,10 +5,10 @@ require_once 'NestedBracketsCalculator.php';
 require_once 'SimpleBracketsCalculator.php';
 require_once 'SimpleCalculator.php';
 require_once 'MultiCalculator.php';
+
 abstract class AbstractCalculator
 {
-    abstract public function calculate (string $input): float;
-
+    abstract public function calculate(string $input): float;
 
     public static function getCalculator($input): AbstractCalculator
     {
@@ -21,7 +21,6 @@ abstract class AbstractCalculator
             self::getAmountOfOperators($input) > 1 => new MultiCalculator(),
         };
     }
-
 
     static function validation(string $input): void
     {
@@ -99,7 +98,7 @@ abstract class AbstractCalculator
 
     static public function multiCalculate($input): float|int
     {
-        $inputForMultiCalculate = !is_array($input) ? creatingInputForCalculating($input) : $input;
+        $inputForMultiCalculate = !is_array($input) ? static::creatingInputForCalculating($input) : $input;
         while (count($inputForMultiCalculate) > 1) {
             switch (true) {
                 case $position = array_search("/", $inputForMultiCalculate):
@@ -127,7 +126,5 @@ abstract class AbstractCalculator
         $afterBrackets = array_slice($input, $secondBracket + 1);
         return array_merge($beforeBrackets, $bracketsResult, $afterBrackets);
     }
-
-
 
 }

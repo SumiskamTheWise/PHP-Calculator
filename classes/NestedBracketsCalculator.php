@@ -4,7 +4,7 @@ namespace classes;
 
 class NestedBracketsCalculator extends AbstractCalculator
 {
-    function getBracketKeys($input): ?array
+    private static function getBracketKeys($input): ?array
     {
         $stack = [];
         $keys = [];

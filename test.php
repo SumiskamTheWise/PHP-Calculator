@@ -37,6 +37,7 @@ $tests = [
 ];
 
 foreach ($tests as $input => $expectedResult) {
+
     $calculator = AbstractCalculator::getCalculator($input);
     $result = $calculator->calculate($input);
 
